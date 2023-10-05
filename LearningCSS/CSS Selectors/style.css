@@ -1,0 +1,25 @@
+body {
+    font-size: 22px;
+}
+
+h1, h2 {
+    color: darkolivegreen;
+}
+
+p {
+    color: slategrey;
+}
+
+.highlight {
+    text-transform: uppercase;
+    background-color: darkred;
+    color: white;
+}
+
+.blue {
+    color: cadetblue;
+}
+
+#second {
+    font-style: italic;
+}

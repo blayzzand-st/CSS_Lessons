@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 2rem;
+    font-family: Quicksand, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+div {
+    width: 200px;
+    height: 200px;
+    border: 2px solid #01172F;
+    border-radius: 4px;
+    display: grid;
+    place-content: center;
+}
+
+div:first-child {
+    background-color: #A23E48;
+    /*transform: translateX(50%);*/
+    /*transform: rotateX(40deg);*/
+    /*transform: scaleX(150%);*/
+    /*transform: skewX(15deg);*/
+}
+
+div:nth-child(2) {
+    background-color: #FF4A1C;
+    /*transform: translateY(-8px);*/
+    /*transform: rotateY(60deg);*/
+    /*transform: scaleY(150%);*/
+    /*transform: skewY(-15deg);*/
+}
+
+div:last-child {
+    background-color: #928779;
+    /*transform: translate(-1rem, -1rem);*/
+    /*transform: rotate(45deg);*/
+    /*transform: scale(75%, 75%);*/
+    /*transform: skew(15deg, 15deg);*/
+}
+
+div:hover {
+    background-color: midnightblue;
+    /*transition-property: background-color, transform;*/
+    /*transition-duration: 1.5s, 2.75s;*/
+    /*transition-delay: 0.25s;*/
+    /*transition-timing-function: ease;*/
+    transition: all 2.5s ease 0.25s;
+}
+
+.animate {
+    /*animation-name: slide;*/
+    /*animation-duration: 5s;*/
+    /*animation-timing-function: ease-in-out;*/
+    /*animation-delay: 0.5s;*/
+    /*animation-iteration-count: 2;*/
+    /*animation-direction: normal;*/
+    /*animation-fill-mode: forwards;*/
+    animation: 5s ease-in-out 0.5s 2 normal forwards slide;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0%);
+    }
+
+    33% {
+        transform: translateX(400px) rotate(180deg);
+    }
+
+    66% {
+        transform: translateX(-400px) rotate(-180deg);
+    }
+
+    100% {
+        transform: translateX(0);
+        background-color: darkmagenta;
+    }
+}

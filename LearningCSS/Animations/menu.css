@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --Header-bgcolor: #3E505B;
+    --Header-color: whitesmoke;
+    --Links-color: rgba(232, 236, 239, 0.65);
+}
+
+html {
+    font-size: 32px;
+    font-family: Quicksand, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+header {
+    background-color: var(--Header-bgcolor);
+    color: var(--Header-color);
+}
+
+nav {
+    display: none;
+    transform-origin: top center;
+    animation: showMenu 0.5s ease-in-out forwards;
+    background-color: var(--Header-bgcolor);
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+nav li {
+    padding: 0.5rem;
+    border-top: 1px solid var(--Links-color);
+}
+
+nav a {
+    display: block;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    border-color: var(--Header-bgcolor);
+}
+
+nav a:any-link {
+    color: var(--Links-color);
+    font-weight: 550;
+    text-decoration: none;
+}
+
+nav a:hover, nav a:focus {
+    transform: scale(1.15);
+    transition: all 0.25s;
+}
+
+.header-title-line {
+    padding: 0.25rem 0.5rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.menu-button {
+    background-color: transparent;
+    border: none;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer !important;
+}
+
+.menu-icon, .menu-icon::after, .menu-icon::before {
+    background-color: var(--Header-color);
+    width: 40px;
+    height: 5px;
+    border-radius: 4px;
+    position: absolute;
+    transition: all 0.5s;
+}
+
+.menu-icon::after, .menu-icon::before {
+    content: "";
+}
+
+.menu-icon::after {
+    transform: translateY(12px);
+}
+
+.menu-icon::before {
+    transform: translateY(-12px);
+}
+
+:is(header:hover, header:focus-within) .menu-icon {
+    background-color: transparent;
+    transform: rotate(360deg)
+}
+
+:is(header:hover, header:focus-within) .menu-icon::before {
+    transform: rotate(45deg);
+}
+
+:is(header:hover, header.focus-within) .menu-icon::after {
+    transform: rotate(-45deg);
+}
+
+:is(header:hover, header.focus-within) nav {
+    display: block;
+}
+
+@keyframes showMenu {
+    0% {
+        transform: scaleY(0);
+    }
+
+    80% {
+        transform: scaleY(1.05);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}

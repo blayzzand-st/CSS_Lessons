@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* UTILITY CLASSES */
+.nowrap {
+    white-space: nowrap;
+}
+
+.center {
+    text-align: center;
+    text-align-last: center;
+}
+
+/* MAIN STYLE */
+html { scroll-behavior: smooth; }
+
+body {
+    font-size: 1.25rem;
+    font-family: Quicksand, sans-serif;
+    min-height: 100vh;
+    background-color: #9bb061;
+    display: flex;
+    flex-direction: column;
+}
+
+header, footer {
+    position: sticky;
+    background-color: #709176;
+    color: whitesmoke;
+    text-align: center;
+}
+
+header {
+    top: 0;
+    border-radius: 0 0 20% 20%;
+}
+
+nav {
+    background-color: #79745C;
+    border-radius: 0 0 20% 20%;
+    padding: 1rem;
+    border-bottom: 1px solid #79745C;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.75rem;
+    padding: 1rem;
+}
+
+footer {
+    bottom: 0;
+    border-radius: 20% 20% 0 0;
+}
+
+/* || GENERAL CLASSES */
+.card {
+    scroll-margin-top: 9rem;
+    border: 3px solid whitesmoke;
+    border-radius: 15%;
+    padding: 1.5rem;
+    margin: auto 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: min(100%, 512px);
+    color: rgba(245, 245, 245, 0.85);
+}
+
+.card:target {
+    border: 2px solid gold;
+}
+
+.card img {
+    border-radius: 100%;
+    width: 90%;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card img:not([alt]) {
+    border: 10px solid red;
+}
+
+.card figure {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bolder;
+    color: rgba(245, 245, 245, 0.75);
+}
+
+.card figcaption {
+    margin: 1rem 0 0 0;
+}
+
+.card figcaption::before {
+    content: '🌟';
+    display: block;
+    text-align: center;
+    text-align-last: center;
+}
+
+nav a:any-link {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+nav :is(a:hover, a:focus) {
+    text-decoration: underline;
+}
+
+nav a:active {
+    text-decoration: underline;
+}
+
+/* SPECIFY CLASSES STYLE */
+#profile_3 img {
+    object-position: 70% center;
+}
+
+/* MEDIA QUERY STYLE */
+/* || LOW */
+@media screen and (min-width: 481px) {
+    body { font-size: 1.75rem; }
+
+    main {
+        justify-content: center;
+        align-items: center;
+        flex-flow: row wrap;
+        padding: 1rem;
+    }
+
+    .card {
+        width: min(60% - 0.1rem, 300px);
+        margin: 1rem;
+    }
+}
+
+/* || MEDIUM */
+@media screen and (min-width: 1025px) {
+    nav {
+        display: none;
+    }
+
+    .card {
+        width: min(60% - 0.1rem, 290px);
+        min-height: 500px;
+    }
+}
+
+/* || LARGE */
+@media screen and (min-width: 1201px) {
+    .card {
+        width: min(60% - 0.1rem, 400px);
+        min-height: 500px;
+    }
+}
+
+@media screen and (max-height: 425px) and (min-aspect-ratio: 7/4) {
+    body { font-size: 1rem; }
+
+    nav { display: none; }
+
+    .card {
+        width: min(60% - 0.1rem, 160px);
+        min-height: 260px;
+        font-size: 0.85rem;
+        margin: 0;
+    }
+}

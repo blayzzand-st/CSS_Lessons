@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.75rem;
+    font-family: Quicksand, sans-serif;
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 75px auto 75px;
+    grid-template-areas: "hd hd hd hd"
+                         "mn mn mn sb"
+                         "ft ft ft ft";
+}
+
+.el {
+    background-color: #AAABBC;
+    color: whitesmoke;
+    display: grid;
+    place-content: center;
+}
+
+.header {
+    grid-area: hd;
+}
+
+.sidebar {
+    grid-area: sb;
+}
+
+.footer {
+    grid-area: ft;
+}
+
+.box {
+    background-color: black;
+    color: whitesmoke;
+    padding: 0.5rem;
+
+    display: grid;
+    place-content: center;
+}
+
+.container {
+    grid-area: mn;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(200px, auto);
+    gap: 1rem;
+}
+
+.box:first-child {
+    background-color: #373F47;
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+}
+
+.box:nth-child(2) {
+    background-color: #6C91C2;
+    grid-row: 1 / 4;
+}
